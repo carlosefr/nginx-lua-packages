@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+
+# Create the service group...
+if ! grep -q resty /etc/group; then
+    groupadd -r resty
+fi
+
+# Create the service user...
+if ! grep -q resty /etc/passwd; then
+    useradd -r -M -d __OPENRESTY_ROOT__ -g resty -s /bin/false resty
+fi
+
+# Set startup runlevels only on first install...
+if [ -z "$2" ]; then
+    update-rc.d openresty defaults
+fi
+
+/etc/init.d/openresty start
+
+
+# vim: set expandtab ts=4 sw=4:

@@ -1,0 +1,12 @@
+Source: openresty
+Package: openresty
+Maintainer: Carlos Rodrigues <cefrodrigues@gmail.com>
+Homepage: http://openresty.org/
+Priority: optional
+Section: misc
+Depends: adduser, lsb-base
+Description: OpenResty application server bundle (nginx)
+ .
+ OpenResty (aka. ngx_openresty) is a full-fledged web application
+ server by bundling the standard nginx core, lots of 3rd-party
+ modules, as well as most of their external dependencies.

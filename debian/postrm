@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+
+if [ "$1" == "purge" ]; then
+    # Cleanup the startup sequence...
+    update-rc.d openresty remove
+
+    # Remove the service user...
+    if grep -q "resty" /etc/passwd; then
+        pkill -KILL -U "resty" || true
+        userdel "resty"
+    fi
+
+    # Also remove the service group if it wasn't removed automatically...
+    if grep -q "resty" /etc/group; then
+        groupdel "resty"
+    fi
+fi
+
+
+# vim: set expandtab ts=4 sw=4:

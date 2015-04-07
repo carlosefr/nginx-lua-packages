@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+
+pkill -TERM -U "resty" || true
+sleep 2
+
+if ps -ef | grep -q ^[r]esty; then
+    echo "Killing OpenResty processes by force..."
+    pkill -KILL -U "resty" || true
+fi
+
+
+# vim: set expandtab ts=4 sw=4:

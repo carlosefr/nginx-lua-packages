@@ -1,0 +1,6 @@
+__OPENRESTY_ROOT__/nginx/conf/fastcgi.conf
+__OPENRESTY_ROOT__/nginx/conf/fastcgi_params
+__OPENRESTY_ROOT__/nginx/conf/mime.types
+__OPENRESTY_ROOT__/nginx/conf/nginx.conf
+__OPENRESTY_ROOT__/nginx/conf/scgi_params
+__OPENRESTY_ROOT__/nginx/conf/uwsgi_params
