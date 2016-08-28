@@ -77,7 +77,12 @@ deb: upstream/ngx_openresty-$(OPENRESTY_VERSION).tar.gz
 	fakeroot dpkg-deb --build "build/$(PACKAGE_NAME)"
 
 
-.PHONY: all clean deb
+docker:
+	sudo docker build -t nginx-lua docker
+	sudo docker build -t nginx-lua-hello docker/hello
+
+
+.PHONY: all clean deb docker
 
 
 # EOF - Makefile
